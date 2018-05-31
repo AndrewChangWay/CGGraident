@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         self.view.addSubview(UIImageView(image: image))
     }
     func test1() {
-        let v1 = UIView(frame: CGRect(x: 50, y: 50, width: 250, height: 250))
+        let v1 = UIView(frame: CGRect(x: 50, y: 70, width: 250, height: 250))
         self.view.addSubview(v1)
         
         let ca = CAGradientLayer()
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     
     
     func test2() {
-        self.view.addSubview(ZQView(frame: CGRect(x: 50, y: 310, width: 250, height: 200)))
+        self.view.addSubview(ZQView(frame: CGRect(x: 50, y: 350, width: 250, height: 200)))
     }
     
 }
