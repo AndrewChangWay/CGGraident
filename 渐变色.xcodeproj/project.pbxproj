@@ -14,6 +14,9 @@
 		7A3717FF20BFD6B00046CE3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A3717FD20BFD6B00046CE3D /* LaunchScreen.storyboard */; };
 		7A37180A20BFD6B00046CE3D /* ___Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A37180920BFD6B00046CE3D /* ___Tests.swift */; };
 		7A37181520BFD6B00046CE3D /* ___UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A37181420BFD6B00046CE3D /* ___UITests.swift */; };
+		7A37182520BFEC390046CE3D /* CCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A37182420BFEC390046CE3D /* CCView.m */; };
+		7A37186820BFFFFB0046CE3D /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A37186720BFFFFB0046CE3D /* ViewController2.swift */; };
+		7A37186A20C006F40046CE3D /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A37186920C006F40046CE3D /* ViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,11 @@
 		7A37181020BFD6B00046CE3D /* 渐变色UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "渐变色UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A37181420BFD6B00046CE3D /* ___UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "___UITests.swift"; sourceTree = "<group>"; };
 		7A37181620BFD6B00046CE3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A37182220BFEC380046CE3D /* 渐变色-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "渐变色-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A37182320BFEC390046CE3D /* CCView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCView.h; sourceTree = "<group>"; };
+		7A37182420BFEC390046CE3D /* CCView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCView.m; sourceTree = "<group>"; };
+		7A37186720BFFFFB0046CE3D /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		7A37186920C006F40046CE3D /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,15 @@
 			children = (
 				7A3717F420BFD6AF0046CE3D /* AppDelegate.swift */,
 				7A3717F620BFD6AF0046CE3D /* ViewController.swift */,
+				7A37182320BFEC390046CE3D /* CCView.h */,
+				7A37182420BFEC390046CE3D /* CCView.m */,
 				7A3717F820BFD6AF0046CE3D /* Main.storyboard */,
+				7A37186720BFFFFB0046CE3D /* ViewController2.swift */,
+				7A37186920C006F40046CE3D /* ViewController3.swift */,
 				7A3717FB20BFD6B00046CE3D /* Assets.xcassets */,
 				7A3717FD20BFD6B00046CE3D /* LaunchScreen.storyboard */,
 				7A37180020BFD6B00046CE3D /* Info.plist */,
+				7A37182220BFEC380046CE3D /* 渐变色-Bridging-Header.h */,
 			);
 			path = "渐变色";
 			sourceTree = "<group>";
@@ -193,6 +206,7 @@
 				TargetAttributes = {
 					7A3717F020BFD6AF0046CE3D = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					7A37180420BFD6B00046CE3D = {
 						CreatedOnToolsVersion = 9.4;
@@ -256,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A37186A20C006F40046CE3D /* ViewController3.swift in Sources */,
 				7A3717F720BFD6AF0046CE3D /* ViewController.swift in Sources */,
+				7A37186820BFFFFB0046CE3D /* ViewController2.swift in Sources */,
 				7A3717F520BFD6AF0046CE3D /* AppDelegate.swift in Sources */,
+				7A37182520BFEC390046CE3D /* CCView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,14 +447,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "渐变色/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jinyinmao.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "渐变色/渐变色-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,14 +468,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "渐变色/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jinyinmao.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "渐变色/渐变色-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
