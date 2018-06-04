@@ -71,7 +71,16 @@ class ViewController: UIViewController {
     
     
     func test2() {
-        self.view.addSubview(ZQView(frame: CGRect(x: 50, y: 350, width: 250, height: 200)))
+//        self.view.addSubview(ZQView(frame: CGRect(x: 50, y: 350, width: 250, height: 200)))
+        let locations: [CGFloat] = [0.0, 0.33, 0.5, 0.8, 1.0]
+        let colors = [UIColor.randomColor(),
+                      UIColor.randomColor(),
+                      UIColor.randomColor(),
+                      UIColor.randomColor(),
+                      UIColor.randomColor()]
+        let view = GradientView.init(frame:  CGRect(x: 50, y: 350, width: 250, height: 200), _startPoint: CGPoint(x: 0, y: 0), _endPoint: CGPoint(x: 0, y: 200), _colors: colors, _locations: locations)
+        self.view.addSubview(view)
+        
     }
     
 }
@@ -86,6 +95,49 @@ extension UIColor {
     class func rgba(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
         
         return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
+    }
+}
+class GradientView: UIView {
+    
+    var startPoint: CGPoint!
+    var endPoint: CGPoint!
+    var colors: [UIColor]!
+    var locations: [CGFloat]!
+    
+    
+    init(frame: CGRect, _startPoint: CGPoint!, _endPoint: CGPoint!, _colors: [UIColor]!, _locations: [CGFloat]!) {
+        super.init(frame: frame)
+        
+        startPoint = _startPoint
+        endPoint = _endPoint
+        colors = _colors
+        locations = _locations
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ rect: CGRect) {
+        
+        let ctx: CGContext? = UIGraphicsGetCurrentContext()
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        var components:[CGFloat]? = []
+        for i in 0..<colors.count {
+            let cc = colors[i].cgColor
+            
+            for j in 0..<4 {
+                components?.append(cc.components![j])
+            }
+            
+        }
+        
+        let gradient:CGGradient? = CGGradient.init(colorSpace:colorSpace, colorComponents:components!,
+                                                   locations:locations, count:locations.count);
+        ctx?.drawLinearGradient(gradient!, start:startPoint, end: endPoint,
+                                options: CGGradientDrawingOptions.drawsAfterEndLocation);
+        
     }
 }
 
