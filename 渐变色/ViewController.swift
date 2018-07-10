@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                      UIColor.randomColor().cgColor]
         ca.locations = [0.0, 0.2, 0.4, 0.5, 0.8, 1]
         ca.startPoint = CGPoint(x: 0, y: 0)
-        ca.startPoint = CGPoint(x: 1, y: 1)
+        ca.endPoint = CGPoint(x: 1, y: 1)
         
         let shape = CAShapeLayer()
         shape.path = UIBezierPath(arcCenter: CGPoint(x: 125, y: 125), radius: 120, startAngle: 0, endAngle: .pi*2, clockwise: true).cgPath
