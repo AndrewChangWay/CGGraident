@@ -16,6 +16,7 @@ class ViewController3: UIViewController {
         // Do any additional setup after loading the view.
         self.view.addSubview(MView(frame: CGRect(x: 0, y: 64, width: 300, height: 250)))
         self.view.addSubview(YView(frame: CGRect(x: 0, y: 320, width: 370, height: 300)))
+        // 测试
     }
 
     override func didReceiveMemoryWarning() {
